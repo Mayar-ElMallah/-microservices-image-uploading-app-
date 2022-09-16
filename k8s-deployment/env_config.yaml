@@ -9,4 +9,4 @@ data:
   POSTGRES_DATABASE: 
   POSTGRES_HOST: 
 metadata:
-  name: env-config
+  name: env_config
