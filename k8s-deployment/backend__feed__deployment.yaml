@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: feed-service
-        image: sdkdeepa/feed-service
+        image: mayar/feed-service
         imagePullPolicy: Always          
         resources:
           requests:
@@ -75,11 +75,11 @@ spec:
               name: env-secret
               key: POSTGRES_USERNAME
         volumeMounts:
-        - name: aws-secret
+        - name: awsSecret
           mountPath: "/root/.aws/"  #aws config for local environment.
           readOnly: true
       restartPolicy: Always
       volumes:
-      - name: aws-secret
+      - name: awsSecret
         secret:
-          secretName: aws-secret  
+          secretName: awsSecret  
