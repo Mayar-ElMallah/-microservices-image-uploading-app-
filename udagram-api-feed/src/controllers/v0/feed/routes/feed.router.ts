@@ -59,7 +59,7 @@ router.get( "/:id", async ( req: Request, res: Response ) => {
     }
 
     //More Sequalize qury  here:  https://stackabuse.com/using-sequelize-orm-with-nodejs-and-express/
-    const result = await FeedItem.findAll({ where: { id } });
+    const result = await Feed_Item.findAll({ where: { id } });
 
     if(result.length != 0){
         res.status(200).send(result);
