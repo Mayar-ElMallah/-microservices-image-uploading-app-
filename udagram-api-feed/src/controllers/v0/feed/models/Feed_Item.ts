@@ -1,7 +1,7 @@
 import {Table, Column, Model, HasMany, PrimaryKey, CreatedAt, UpdatedAt, ForeignKey} from 'sequelize-typescript';
 
 @Table
-export class FeedItem extends Model<FeedItem> {
+export class Feed_Item extends Model<Feed_Item> {
   @Column
   public caption!: string;
 
