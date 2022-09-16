@@ -1,4 +1,4 @@
-# MicroservicesUdacity [![Build Status](https://travis-ci.com/Mayar/microservices-udacity-project3.svg?branch=main)](https://travis-ci.com/sdkdeepa/microservices-udacity-project3)
+# MicroservicesUdacity [![Build Status](https://travis-ci.com/Mayar/microservices-udacity-project3.svg?branch=main)](https://travis-ci.com/mayar/microservices-udacity-project3)
 
 Steps to perform this project
 
