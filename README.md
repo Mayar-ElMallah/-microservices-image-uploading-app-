@@ -1,11 +1,11 @@
-# MicroservicesUdacity [![Build Status](https://travis-ci.com/Mayar/microservices-udacity-project3.svg?branch=main)](https://travis-ci.com/mayar/microservices-udacity-project3)
+# MicroservicesUdacity [![Build Status](https://travis-ci.com/mayar/microservices-udacity-project3.svg?branch=main)](https://travis-ci.com/mayar/microservices-udacity-project3)
 
 Steps to perform this project
 
 1. Clone the project - https://github.com/sdkdeepa/Udacity-project3-starter-N-solution/blob/master/project/
 2. To Run locally: 
-      - run   `npm i`
-      - `npm start`
+      - run   'npm i'
+      - 'npm start'
 2. Create docker images for front, backend feed, user, frontend and reverse proxy
       - `docker build -t <docker local repor name> .`  
       - `docker tag <local repo> <docker hub name>` 
