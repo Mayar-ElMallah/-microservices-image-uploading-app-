@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { FeedItem } from '../models/FeedItem';
+import { Feed_Item } from '../models/Feed_Item';
 import { NextFunction } from 'connect';
 const { v4: uuidv4 } = require('uuid');
 import * as jwt from 'jsonwebtoken';
@@ -36,7 +36,7 @@ export function requireAuth(req: Request, res: Response, next: NextFunction) {
 
 // Get all feed items
 router.get('/', async (req: Request, res: Response) => {
-    const items = await FeedItem.findAndCountAll({order: [['id', 'DESC']]});
+    const items = await Feed_Item.findAndCountAll({order: [['id', 'DESC']]});
     items.rows.map((item) => {
             if(item.url) {
                 item.url = AWS.getGetSignedUrl(item.url);
@@ -91,7 +91,7 @@ router.patch('/:id',
         return res.status(400).send({ message: 'File url is required' });
         }
 
-        const result = await FeedItem.findByPk(id).then(function(feedItem) {
+        const result = await Feed_Item.findByPk(id).then(function(feedItem) {
             feedItem.update({
                 caption: caption,
                 url: fileName
@@ -123,15 +123,15 @@ router.post('/',
 
     // check Caption is valid
     if (!caption) {
-        return res.status(400).send({ message: 'Caption is required or malformed' });
+        return res.status(400).send({ message: 'Caption is required' });
     }
 
     // check Filename is valid
     if (!fileName) {
-        return res.status(400).send({ message: 'File url is required' });
+        return res.status(400).send({ message: 'The URL of File is required' });
     }
 
-    const item = await new FeedItem({
+    const item = await new Feed_Item({
             caption: caption,
             url: fileName
     });
