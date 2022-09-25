@@ -15,7 +15,7 @@ spec:
         service: backend-user
     spec:
       containers:
-      - image: docker.io/mohllal/udacity-restapi-user
+      - image: docker.io/mayar/udacity-restapi-user
         name: backend-user 
         imagePullPolicy: Always  
         resources:
