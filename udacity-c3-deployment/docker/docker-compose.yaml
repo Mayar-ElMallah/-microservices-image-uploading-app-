@@ -1,15 +1,15 @@
 version: "3"
 services:
   reverseproxy:
-      image: mohllal/reverseproxy
+      image: mayar/reverseproxy
       ports:
           - 8080:8080
       restart: always
       depends_on:
-        - backend-user
-        - backend-feed     
+        - backend--user
+        - backendFeed     
   backend-user:
-    image: mohllal/udacity-restapi-user
+    image: mayar/udacity-restapi-user
     environment:
       POSTGRESS_USERNAME: $POSTGRESS_USERNAME
       POSTGRESS_PASSWORD: $POSTGRESS_PASSWORD 
@@ -20,8 +20,8 @@ services:
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
-  backend-feed:
-    image: mohllal/udacity-restapi-feed
+  backendFeed:
+    image: mayar/udacity-restapi-feed
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -35,10 +35,10 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
   backend-image-filter:
-    image: mohllal/udacity-image-filter
+    image: mayar/udacity-image-filter
     environment:
       URL: "http://localhost:8100"
   frontend:
-    image: mohllal/udacity-frontend
+    image: mayar/udacity-frontend
     ports:
       - "8100:80"
